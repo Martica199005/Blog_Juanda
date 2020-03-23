@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Articles(models.Model):
@@ -7,7 +8,7 @@ class Articles(models.Model):
   body=models.TextField()
   date=models.DateTimeField(auto_now_add=True)
   thumb=models.ImageField(default='default.png',blank=True)
-  #add in author
+  author = models.ForeignKey(User, default=None,on_delete=models.DO_NOTHING)
 
 #function to see the title of each article in db
   def __str__(self):
