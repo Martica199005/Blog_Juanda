@@ -2,11 +2,28 @@
 
 {% block content %}
 <div class="article-detail">
-  <div class="article">
-    <img src="{{articles.thumb.url}}"/>
-    <h2>{{articles.title}}</h2>
-    <p>{{articles.body}}</p>
-    <p>{{articles.date}}</p>
+  <div class="article ">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 pt-1 pb-1 pt-md-3 pb-md-3">
+          <img class="img-fluid" src="{{articles.thumb.url}}"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h2>{{articles.title}}</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>{{articles.body}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>{{articles.date}}</p>
+        </div>
+      </div>
   </div>
 </div>
 {% endblock %}

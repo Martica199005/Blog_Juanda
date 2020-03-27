@@ -3,17 +3,26 @@
 {% block content %}
 <title>Articles</title>
   <body>
-    <h1>Articles</h1>
-    <div class="articles">
-      {% for article in articles %}
-        <div class="article">
-          <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a></h2>
-          <p>{{article.slug}}</p>
-          <p>{{article.snippets}}</p>
-          <p>{{article.date}}</p>
-          <p class="author">added by {{article.author.username}}</p>
+      <div class="container pb-1 pt-1 pb-md-5 pt-md-5">
+        <div class="row text-center">
+          <div class="col-12">
+            <h1 >Articles</h1>
+          </div>
         </div>
-      {% endfor %}
-    </div>
+        <div class="row align-items-center">
+          <div class="col-12">
+            <div class="articles">
+              {% for article in articles %}
+                <div class="article">
+                  <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a></h2>
+                  <p>{{article.snippets}}</p>
+                  <p>{{article.date}}</p>
+                  <p class="author">added by {{article.author.username}}</p>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
   </body>
 {% endblock %}

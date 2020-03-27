@@ -49,3 +49,13 @@ font-weight:600;
 .bottom-footer p{
  color: white;
 }
+
+.article-detail .article{
+    padding: 0;
+}
+
+.wrapper h1{
+font-weight:600;
+  
+}
+
