@@ -9,18 +9,22 @@
             <h1 >Articles</h1>
           </div>
         </div>
-        <div class="row align-items-center">
+        <div class="row text-justify">
           <div class="col-12">
             <div class="articles">
-              {% for article in articles %}
-                <div class="article">
-                  <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a></h2>
-                  <p>{{article.snippets}}</p>
-                  <p>{{article.date}}</p>
-                  <p class="author">added by {{article.author.username}}</p>
-                </div>
-              {% endfor %}
-            </div>
+                {% for article in articles %}
+                  <div class="article">
+                    <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a></h2>
+                    <p>{{article.snippets}}</p>
+                    <p>{{article.date}}</p>
+                    <p class="author">added by {{article.author.username}}</p>
+                    {% if user.is_authenticated%}
+                      <button type="button" class="btn btn-danger">Delete</button>
+                  {%else%}
+                  {%endif%}
+                  </div>
+                {% endfor %}
+          </div>
           </div>
         </div>
       </div>

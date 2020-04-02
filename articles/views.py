@@ -28,3 +28,7 @@ def article_create(request):
   else:
     form=forms.CreateArticles()
   return render(request,'articles/article_create.html', {'form':form})
+
+
+
+

@@ -1,21 +1,22 @@
 {% extends 'base_layout.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container pt-md-5 pb-md-5">
   <div class="row">
-    <div class="col-12 text-left">
-        <h1>Signup</h1>
+    <div class="col-12 text-center">
+        <h1>Login</h1>
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-3 col-md-3 ">
+    <div class="col-12">
     <form class="site-form" action="{% url 'accounts:login' %}" method="post">
     {% csrf_token %}
-      {{form}}
+      {{form|crispy}}
       {% if request.GET.next %}
       <input type="hidden" name="next" value="{{request.GET.next}}">
       {% endif%}
-      <input type="submit" value="Login">
+      <input class="btn btn-secondary" type="submit" value="Login">
     </form>
     </div>
   </div>

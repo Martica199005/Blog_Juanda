@@ -7,8 +7,9 @@ class Articles(models.Model):
   slug=models.SlugField()
   body=models.TextField()
   date=models.DateTimeField(auto_now_add=True)
-  thumb=models.ImageField(default='default.png',blank=True)
+  thumb=models.ImageField(default='1.jpg',blank=True)
   author = models.ForeignKey(User, default=None,on_delete=models.DO_NOTHING)
+ 
 
 #function to see the title of each article in db
   def __str__(self):
