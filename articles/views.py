@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from .models import Articles
 from django.contrib.auth.decorators import login_required
 from . import forms
+from django.shortcuts import get_list_or_404, get_object_or_404
+from django.contrib import messages
 #from django.http import HttpResponse
 
 # Create your views here.
@@ -28,6 +30,18 @@ def article_create(request):
   else:
     form=forms.CreateArticles()
   return render(request,'articles/article_create.html', {'form':form})
+
+def delete_article(request,slug):
+  print(slug)
+  Articles.objects.get(slug=slug).delete()
+  return redirect('articles:list')
+
+  
+
+
+
+
+
 
 
 

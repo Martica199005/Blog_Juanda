@@ -19,7 +19,8 @@
                     <p>{{article.date}}</p>
                     <p class="author">added by {{article.author.username}}</p>
                     {% if user.is_authenticated%}
-                      <button type="button" class="btn btn-danger">Delete</button>
+                    <a href="{% url 'articles:delete_article' slug=article.slug %}">
+                      <button type="button" class="btn btn-danger">Delete</button></a>
                   {%else%}
                   {%endif%}
                   </div>
