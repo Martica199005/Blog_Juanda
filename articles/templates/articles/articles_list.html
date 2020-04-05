@@ -14,6 +14,7 @@
             <div class="articles">
                 {% for article in articles %}
                   <div class="article">
+                    <br>
                     <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a></h2>
                     <p>{{article.snippets}}</p>
                     <p>{{article.date}}</p>
@@ -23,6 +24,7 @@
                       <button type="button" class="btn btn-danger">Delete</button></a>
                   {%else%}
                   {%endif%}
+                  <br>
                   </div>
                 {% endfor %}
           </div>
